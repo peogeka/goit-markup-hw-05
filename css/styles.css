@@ -83,6 +83,7 @@ text-transform: uppercase;
 }
 
 .menu-item {
+    position: relative;
     margin-right: 40px;
 }
 .menu-item:last-child{
@@ -119,6 +120,21 @@ text-transform: uppercase;
 .contact-list .item + .item {
     margin-left: 40px;
 }
+
+.current::after{
+    position: absolute;
+    content: "";
+
+    width: 100%;
+    height: 4px;
+    left: 0px;
+    top: 44px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    background: var(--hover-focus-color);
+
+    
+    }
 
 
 .contact-link {
@@ -192,6 +208,8 @@ text-transform: uppercase;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn:hover,
@@ -199,7 +217,60 @@ text-transform: uppercase;
     background-color: var(--hover-focus-color);
 }
 
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 47, 66, 0.4);
 
+    opacity: 1;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden{
+    opacity: 0;
+    pointer-events: none;
+    
+    
+}
+.backdrop.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(0.9);
+
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+
+    min-height: 576px;
+    min-width: 408px;
+    background: #FCFCFC;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    
+    
+}
+.modal-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: auto;
+    margin-top: 24px;
+    margin-right: 24px;
+    cursor: pointer;
+    
+    width: 24px;
+    height: 24px;
+    background: #E7E9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    text-align: center;
+}
 
 
 .rules{
@@ -247,12 +318,17 @@ text-transform: uppercase;
     align-items: center;
     width: 100%;
     height: 100%;
+    border-color: #8E8F99;
     
     
 
 
     border: 1px solid #afb1b8;
     border-radius: 4px;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    
 }
 .customers-logo {
     margin-right: 24px;
@@ -270,6 +346,9 @@ text-transform: uppercase;
 .point-customers{
     fill: #8e8f99;
     display: flex;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    
 }
 .cust-item:hover,
 .cust-item:focus {
@@ -340,6 +419,7 @@ text-transform: uppercase;
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-icon:hover,
 .social-icon:focus{
@@ -452,7 +532,7 @@ text-transform: uppercase;
     padding: 12px 24px;
     border-radius: 4px;
     border: 1px solid var(--border-color);
-    background: var(--background-color-white);
+    background-color: var(--background-color-white);
 
     font-family: "Roboto", sans-serif;
     cursor: pointer;
@@ -461,6 +541,8 @@ text-transform: uppercase;
     line-height: 1.5;
     letter-spacing: 0.04em;
     color:  var(--primary-blue-color);
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),color 250ms cubic-bezier(0.4, 0, 0.2, 1);
        
    
 }
@@ -472,6 +554,7 @@ text-transform: uppercase;
 }
 .link-portfolio {
     display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -526,6 +609,28 @@ text-transform: uppercase;
     padding-left: 16px;
     
 }
+
+.text-portfolio{
+    position: absolute;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 40px 32px 0 32px; 
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    color: #F4F4FD;
+    transform: translateY(0);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kard-porfolio {
+    position: relative;
+    overflow: hidden;
+}
+.gallery:hover .text-portfolio{
+    transform: translateY(-100%);
+}
+
 .social-footer{
 margin-left: 120px;
 }
@@ -549,3 +654,4 @@ margin-left: 120px;
     margin-bottom: 16px;
     
 }
+
