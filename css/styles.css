@@ -109,6 +109,9 @@ text-transform: uppercase;
     margin-left: auto;
 }
 
+
+
+
 .contact-link:hover,
 .contact-link:focus {
     color: var(--hover-focus-color);
@@ -144,6 +147,7 @@ text-transform: uppercase;
     color: var(--primary-text-color);
     font-style: normal;
    
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -162,7 +166,7 @@ text-transform: uppercase;
 
 .hero-image {
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: 50% 50%;
     height: 600px;
     max-width: 1440px;
@@ -244,7 +248,7 @@ text-transform: uppercase;
     top: 50%;
     left: 50%;
     
-
+    border-radius: 4px;
     min-height: 576px;
     min-width: 408px;
     background: #FCFCFC;
@@ -266,11 +270,21 @@ text-transform: uppercase;
     
     width: 24px;
     height: 24px;
-    background: #E7E9FC;
+    background-color: #E7E9FC;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     text-align: center;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
+.modal-button:hover,
+.modal-button:focus {
+    background-color: var(--hover-focus-color);
+    fill: #FFFFFF;
+}
+
 
 
 .rules{
@@ -525,13 +539,15 @@ text-transform: uppercase;
 .btn-portfolio:focus {
     background: var(--hover-focus-color);
     color: var(--primary-white-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    border: 1px solid #404BBF;
 }
 
 .btn-portfolio {
     
     padding: 12px 24px;
     border-radius: 4px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #E7E9FC;
     background-color: var(--background-color-white);
 
     font-family: "Roboto", sans-serif;
@@ -542,8 +558,8 @@ text-transform: uppercase;
     letter-spacing: 0.04em;
     color:  var(--primary-blue-color);
 
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-       
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
    
 }
 
